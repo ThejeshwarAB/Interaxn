@@ -79,12 +79,15 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="container mt-3 mb-3">
-                                        <h3>Random ID: <b id="random"></b></h3>
-                                        <form action="/" method="POST" enctype="multipart/form-data">
-                                            <input type="file" name="fileSend" id="fileSend"
+                                        <h3>Random ID: <b id="randomText"></b></h3>
+                                        <form action="/api/file/upload" method="POST" enctype="multipart/form-data">
+                                            <input type="file" name="filename" id="filename" ref="filename"
                                                 class="text-center col-8 mb-3 form-control">
                                             <input type="submit" value="Upload"
-                                                class="btn btn-primary col-4 form-control">
+                                                class="btn btn-primary col-4 form-control" onclick="call()">
+                                            <!-- <h3>Random ID: <b id="random"></b></h3> -->
+                                            <input type="text" name="random" id="random" class="form-control"
+                                                style="display: none;">
                                         </form>
                                     </div>
                                 </div>
@@ -106,10 +109,13 @@
                                 </div>
                                 <div class="modal-body">
                                     <div class="container mt-3">
-                                        <h3>Enter random ID</h3>
-                                        <input type="text" name="" id="" class="col-4 mb-3 form-control">
-                                        <input type="button" value="Download"
-                                            class="text-center col-4 btn btn-primary form-control">
+                                        <form action="/api/file/download" method="POST" enctype="multipart/form-data">
+                                            <h3>Enter random ID</h3>
+                                            <input type="text" name="random" id="random"
+                                                class="col-4 mb-3 form-control text-center">
+                                            <input type="submit" value="Download"
+                                                class="text-center col-4 btn btn-primary form-control">
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -125,10 +131,13 @@
 
 </body>
 <script>
+
     function randomNo() {
-        var random = Math.floor(Math.random() * 1000000);
-        $("#random").html(random)
+        var random = Math.floor(Math.random() * 100000000);
+        $("#random").val(random)
+        $("#randomText").html(random)
     }
+
 </script>
 
 </html>
