@@ -12,7 +12,7 @@ const upload = require('express-fileupload');
 const gridfs = require('gridfs-stream');
 const fs = require('fs');
 
-const port = 3000 || process.env.port;
+const port = 3000 || process.env.PORT;
 
 const path = require("path");
 const bodyParser = require("body-parser");
