@@ -12,16 +12,16 @@ const upload = require('express-fileupload');
 const gridfs = require('gridfs-stream');
 const fs = require('fs');
 
-const port = 3000 || process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const path = require("path");
 const bodyParser = require("body-parser");
 
-app.listen(port, (err) => {
+app.listen(PORT, (err) => {
     if (err)
         throw err;
     else
-        console.log("Server is running at: " + port)
+        console.log("Server is running at: " + PORT)
 })
 
 app.set("view engine", "ejs");
