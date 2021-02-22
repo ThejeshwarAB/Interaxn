@@ -50,10 +50,10 @@ app.get('/', (req, res) => {
 
 // mongoose.connect('mongodb://localhost:27017/interaxn')
 
-var db = 'mongodb://localhost:27017/interaxn';
+var db = 'mongodb+srv://interaxn:T7KSlS4Rm6PLRdYl@cluster0.t8joo.mongodb.net/interaxn?retryWrites=true&w=majority';
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true });
 
-mongoose.connect('mongodb://localhost:27017/interaxn');
+mongoose.connect(db);
 mongoose.Promise = global.Promise;
 
 gridfs.mongo = mongoose.mongo;
